@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    transition: 0.5s ease;
+}
+
+.home:before {
+    z-index: 111;
+    content: '';
+    position: absolute;
+    background: rgba(3, 96, 251, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.overlay_blury {
+    font-size: 50px;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 728px;
+    width: 100%;
+    /* filter: blur(5px); */
+    background: rgba(109, 128, 127, 0.801);
+    /* object-fit: cover; */
+    border: 2px solid rgba(206, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.overlay_blury.active-blur {
+    transform: scale(1);
+}
+
+/* CBSE_EXP logo */
+
+header .expo {
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .nav {
+    position: relative;
+}
+
+/* Nav-panel css */
+
+header .nav .nav-panel a{
+    position: relative;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 50px;
+    transition: 0.3s ease;
+}
+
+.nav-panel .login-button {
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 550;
+    margin-left: 30px;
+}
+
+.nav-panel .login-button:hover {
+    color: black;
+    background: white;
+}
+
+
+/* Animation of line below the nav-items */
+
+header .nav .nav-panel a:before{
+    content: '';
+    position: absolute;
+    background: white;
+    width: 0%;
+    height: 2.5px;
+    bottom: -6px;
+    left: 0;
+    transition: 0.4s ease;
+}
+
+header .nav .nav-panel a:hover:before{
+    width: 100%;
+}
+
+/*typewriter animation is from here vvvvv*/
+
+.dynamic-typing {
+    position: relative;
+    color: aqua;
+}
+
+.dynamic-small-dot {
+    font-size: 0.000001px; /* This makes a dot before Typewriter veryyyyy small */
+}
+
+.dynamic-typing::before {
+    position: fixed;
+    content: '';
+    right: -8px;
+    top: 50%;
+    position: absolute;
+    height: 60px;
+    width: 4px;
+    background: white;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* Main content CSS */
+
+.body-content{
+    z-index: 999;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+
+.body-content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.body-content h2{
+    font-size: 30px;
+}
+
+.body-content p{
+    margin: 20px auto;
+    font-weight: 100;
+
+}
+
+.body-content p {
+    margin-bottom: 35px;
+}
+
+.body-content a {
+    background: white;
+    border-color: white;
+    padding: 15px 35px;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.body-content a:hover {
+    color: white;
+    background: black;
+    /* box-shadow: 0 0 20px rgb(255, 255, 255); */
+}
+
+.icons-media {
+    z-index: 999;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+    margin-top: 10px;
+    bottom: 30%;
+}
+
+.icons-media ion-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px 5px;
+    color: white;
+    text-decoration: none;
+    animation-delay: calc(0.2s * var(--i)); 
+}
+
+.icons-media ion-icon:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255);
+}
+
+.icons-media {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.icons-media a:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.expo:hover {
+    transform: scale(1.2);
+    transition: ease-out 0.3s;
+}
+
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+}
+
+.body-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Slider Navigation form here vvvvv */
+
+.slider-nav {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(610px);
+}
+
+.slider-nav .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-nav .nav-btn.active2 {
+    background: rgb(76, 100, 255);
+}
+
+.slider-nav .nav-btn:not(:last-child){
+    margin-right: 13px;
+}
+
+.slider-nav .nav-btn:hover {
+    transform: scale(1.2);
+}
+
+.body-video {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 50% 100%);
+}
+
+.body-video.active2 {
+    clip-path: circle(100% at 50% 100%);
+    transition: 0.8s ease;
+    transition-property: clip-path;
+}
+
+/* Login menu from here */
+
+.wrapper {
+    z-index: 1001;
+    position: relative;
+    top: 115px;
+    left: 37%;
+    width: 400px;
+    height: 440px;
+    background: rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    backdrop-filter: blur(70px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.18s ease;
+    transition: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease ;
+    transform: translateX(0);
+}
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: black;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.form-box h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: black;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 0.9em;
+    color: #000;
+    font-weight: 500;
+    margin: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: gray;
+    color: #000;
+}
+
+.login-register {
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 550;
+}
+
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+/* Loading Screeen animation from here vvvvv */
+
+.overlay_loader {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    height: 750px;
+    width: 100%;
+    background: rgb(183, 204, 204);
+    transform: scale(1);
+}
+
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 20px solid;
+    border-color: #000 transparent;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+    top: 35%;
+    left: 45%;
+}
+
+@keyframes load {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.visible-preloader {
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+}

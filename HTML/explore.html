@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/cssexolore.css">
+</head>
+<body>
+    <div class="overlay_loader" id="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="explore-home">
+       <header>
+            <a href="#" class="expo">CBSE_EXPO</a>
+            <div class="nav">
+                <div class="nav-panel">
+                        <a href="index.html">Home</a>
+                        <a href="explore.html">Explore</a>
+                        <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </header>
+        <section>
+            <video class="body-video" src="/GRAPHICS/exploreocean.mp4" autoplay muted loop></video>
+        </section>
+        <div class="explore-content">
+            <h1>Start your wonderful Journey Now!</h1>
+            <p>Explore the beauty of Indian culture of Jharkhand, full of cultral sites, caves, temples, waterfalls and many more...</p>
+        </div>
+        <div class="search-box">
+            <div class="input-box">
+                <input id="searchBox" type="text" placeholder="Enter your destination" onkeypress="checkEnter(event)">
+            </div>
+            <button onclick="searchResults()" class="search_btn"><ion-icon name="search-outline"></ion-icon></button>
+        </div>
+        <div id="topPlaces" class="top-places">
+            <h4>Places to travel</h4>
+            <div class="cards-topplaces">
+                <div class="card">
+                    <h3>WATERFALLS</h3>
+                    <img src="/GRAPHICS/hundru-falls-ranchi.jpg" alt="#">
+                        <div class="btn-place">
+                            <a href="#" onclick="filterPlaces('waterfalls'); return false;">Explore Now</a>
+                        </div>
+                </div>
+                <div class="card">
+                    <h3>MOUNTAINS</h3>
+                    <img src="/GRAPHICS/neatrhalt-moutain.jpg" alt="#">
+                        <div class="btn-place">
+                            <a href="#" onclick="filterPlaces('mountains')" >Explore Now</a>
+                        </div>
+                </div>
+                <div class="card">
+                    <h3>PARKS</h3>
+                    <img src="/GRAPHICS/beltapark-elephants.jpg" alt="#">
+                        <div class="btn-place">
+                            <a href="#" onclick="filterPlaces('parks')" >Explore Now</a>
+                        </div>
+                </div>
+                <div class="card">
+                    <h3>TEMPLES</h3>
+                    <img src="/GRAPHICS/deonagar-baidyanath.png" alt="">
+                        <div class="btn-place">
+                            <a href="#" onclick="filterPlaces('temples')" >Explore Now</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-results">
+
+            <!-- 1. Hundru Falls -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/hundru-falls-ranchi.jpg" alt="Hundru Falls, Ranchi">
+                    <h2>Hundru Falls</h2>
+                    <p class="description">A 98-meter high waterfall near Ranchi, popular picnic spot during monsoon. Surrounded by rocky cliffs and lush greenery.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Nature Beauty</li>
+                            <li>Waterfall</li>
+                            <li>Adventures</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-1.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Near Ranchi</span>
+                        <span class="rate">5.0</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Dassam Falls -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/2.1.jpg" alt="Dassam Falls, Ranchi">
+                    <h2>Dassam Falls</h2>
+                    <p class="description">A 44-meter waterfall on the Kanchi River, famous for scenic views and photography.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Waterfall</li>
+                            <li>Photography</li>
+                            <li>Nature Beauty</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-2.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ranchi</span>
+                        <span class="rate">4.7</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Jonha Falls -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/3.1.jpg" alt="Jonha Falls, Ranchi">
+                    <h2>Jonha Falls</h2>
+                    <p class="description">Also known as Gautamdhara Falls, ideal picnic spot surrounded by forests and caves.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Waterfall</li>
+                            <li>Caves</li>
+                            <li>Picnic Spot</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-3.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Near Ranchi</span>
+                        <span class="rate">4.5</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4. Hirni Falls -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/4.1.png" alt="Hirni Falls, Ranchi">
+                    <h2>Hirni Falls</h2>
+                    <p class="description">Picturesque waterfall in dense forest, known for wildlife and serene surroundings.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Waterfall</li>
+                            <li>Wildlife</li>
+                            <li>Nature Beauty</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-4.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ranchi</span>
+                        <span class="rate">4.6</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. Patratu Valley -->
+            <div class="result-card-mountains">
+                <div class="result-card">
+                    <img src="/GRAPHICS/5.1.jpg" alt="Patratu Valley, Ranchi">
+                    <h2>Patratu Valley</h2>
+                    <p class="description">Curvy roads, lush greenery, and lakes make this valley a biker’s paradise.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Scenic Drive</li>
+                            <li>Nature Beauty</li>
+                            <li>Adventure</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-5.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Near Ranchi</span>
+                        <span class="rate">4.8</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Betla National Park -->
+            <div class="result-card-parks">
+                <div class="result-card">
+                    <img src="/GRAPHICS/6.1.jpg" alt="Betla National Park, Latehar">
+                    <h2>Betla National Park</h2>
+                    <p class="description">A famous tiger reserve with elephants, deer, and forts inside the jungle.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Wildlife</li>
+                            <li>Adventure</li>
+                            <li>Nature</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-6.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Latehar</span>
+                        <span class="rate">4.9</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 7. Netarhat -->
+            <div class="result-card-mountains">
+                <div class="result-card">
+                    <img src="/GRAPHICS/7.1.jpg" alt="Netarhat, Latehar">
+                    <h2>Netarhat</h2>
+                    <p class="description">The Queen of Chotanagpur, popular for sunrise and sunset points.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Hill Station</li>
+                            <li>Nature Beauty</li>
+                            <li>Sunset</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-7.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Latehar</span>
+                        <span class="rate">4.7</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 8. Parasnath Hills -->
+            <div class="result-card-mountains">
+                <div class="result-card">
+                    <img src="/GRAPHICS/8.1.jpg" alt="Parasnath Hills, Giridih">
+                    <h2>Parasnath Hills</h2>
+                    <p class="description">Most sacred Jain pilgrimage site, highest peak of Jharkhand.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Hill</li>
+                            <li>Temple</li>
+                            <li>Trekking</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-8.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Giridih</span>
+                        <span class="rate">5.0</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 9. Deoghar -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/deonagar-baidyanath.png" alt="Baidyanath Dham, Deoghar">
+                    <h2>Deoghar</h2>
+                    <p class="description">Home to Baidyanath Jyotirlinga temple, one of 12 Jyotirlingas in India.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Temple</li>
+                            <li>Pilgrimage</li>
+                            <li>Culture</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-9.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Deoghar</span>
+                        <span class="rate">5.0</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 10. Rajrappa Temple -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/10.1.jpg" alt="Rajrappa Temple, Ramgarh">
+                    <h2>Rajrappa Temple</h2>
+                    <p class="description">Dedicated to Goddess Chhinnamasta, situated at confluence of rivers.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Temple</li>
+                            <li>River Confluence</li>
+                            <li>Pilgrimage</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-10.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ramgarh</span>
+                        <span class="rate">4.8</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 11. Hazaribagh National Park -->
+            <div class="result-card-parks">
+                <div class="result-card">
+                    <img src="/GRAPHICS/11.1.jpg" alt="Hazaribagh National Park">
+                    <h2>Hazaribagh National Park</h2>
+                    <p class="description">Wildlife sanctuary with tigers, leopards, and scenic plateaus.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Wildlife</li>
+                            <li>Adventure</li>
+                            <li>Nature</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-11.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Hazaribagh</span>
+                        <span class="rate">4.7</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 12. Tagore Hill -->
+            <div class="result-card-mountains">
+                <div class="result-card">
+                    <img src="/GRAPHICS/12.1.jpg" alt="Tagore Hill, Ranchi">
+                    <h2>Tagore Hill</h2>
+                    <p class="description">Historical hill associated with Rabindranath Tagore, offers panoramic city views.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Hill</li>
+                            <li>History</li>
+                            <li>Nature Beauty</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-12.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ranchi</span>
+                        <span class="rate">4.4</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 13. Panchghagh Falls -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/13.1.jpg" alt="Panchghagh Falls, Khunti">
+                    <h2>Panchghagh Falls</h2>
+                    <p class="description">Five streams of water merging into one, perfect weekend escape.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Waterfall</li>
+                            <li>Nature</li>
+                            <li>Picnic Spot</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-13.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Khunti</span>
+                        <span class="rate">4.6</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 14. Ranchi Lake -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/14.1.jpg" alt="Ranchi Lake, Ranchi">
+                    <h2>Ranchi Lake</h2>
+                    <p class="description">Artificial lake offering boating and peaceful environment in city center.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Lake</li>
+                            <li>Boating</li>
+                            <li>Nature Beauty</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-14.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ranchi</span>
+                        <span class="rate">4.3</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 15. Maithon Dam -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/15.1.jpg" alt="Maithon Dam, Dhanbad">
+                    <h2>Maithon Dam</h2>
+                    <p class="description">Large dam on Barakar River, known for boating and scenic beauty.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Dam</li>
+                            <li>Boating</li>
+                            <li>Nature</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-15.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Dhanbad</span>
+                        <span class="rate">4.5</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 16. Topchanchi Lake -->
+            <div class="result-card-waterfalls">
+                <div class="result-card">
+                    <img src="/GRAPHICS/16.1.jpg" alt="Topchanchi Lake, Dhanbad">
+                    <h2>Topchanchi Lake</h2>
+                    <p class="description">Artificial lake surrounded by forests, famous picnic spot in Dhanbad.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Lake</li>
+                            <li>Picnic</li>
+                            <li>Nature</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-16.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Dhanbad</span>
+                        <span class="rate">4.4</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 17. Shikharji -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/17.1.jpg" alt="Shikharji, Parasnath Hills">
+                    <h2>Shikharji</h2>
+                    <p class="description">Important Jain pilgrimage, with temples atop Parasnath Hills.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Temple</li>
+                            <li>Pilgrimage</li>
+                            <li>Trekking</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-17.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Parasnath Hills</span>
+                        <span class="rate">5.0</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 18. Maluti Temples -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/18.1.jpg" alt="Maluti Temples, Dumka">
+                    <h2>Maluti Temples</h2>
+                    <p class="description">Cluster of 72 historical temples built in terracotta style, showcasing ancient architecture and culture.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Temple</li>
+                            <li>History</li>
+                            <li>Culture</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-18.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Dumka</span>
+                        <span class="rate">4.5</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 19. Jagannath Temple Ranchi -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/19.1.jpg" alt="Jagannath Temple, Ranchi">
+                    <h2>Jagannath Temple Ranchi</h2>
+                    <p class="description">A 17th-century temple similar to Puri's Jagannath, situated atop a hill.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Temple</li>
+                            <li>Hill</li>
+                            <li>Pilgrimage</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-19.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Ranchi</span>
+                        <span class="rate">4.6</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 20. Palamu Fort -->
+            <div class="result-card-temples">
+                <div class="result-card">
+                    <img src="/GRAPHICS/20.1.jpg" alt="Palamu Fort, Latehar">
+                    <h2>Palamu Fort</h2>
+                    <p class="description">Historic ruined fort inside Betla National Park, known for Mughal-era structures.</p>
+                    <div class="features">
+                        <ul>
+                            <li>Fort</li>
+                            <li>History</li>
+                            <li>Adventure</li>
+                        </ul>
+                    </div>
+                    <a href="javascript:void(0)" onclick="openDetails('ind-page-20.html')">View Details</a>
+                    <p class="location-rating">
+                        <span class="location"><ion-icon class="icon-location" name="location"></ion-icon> Location: Latehar</span>
+                        <span class="rate">4.3</span>
+                        <span class="icon-rating">
+                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half"></ion-icon>
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+
+            <p id="noResults" style="display:none; ">
+            No results found
+            </p>
+
+        </div>
+
+        <button id="backBtn"><ion-icon name="arrow-back-outline"></ion-icon></button>
+
+
+        <!-- <div class="offers">
+            <h1>Limited-Time tour Packages for You</h1>
+            <p>Choose your next destination</p>
+            <div class="top-offer-cards">
+                <div class="offer-card">
+                    <h3>Ranchi - Full Tour</h3>
+                    <div class="img-text">
+                        <img src="/GRAPHICS/ranchi.png" alt="">
+                        <h4>Included: Flight ticket, Hotel, Tours, Guide</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="heart_chart">
+                                <ion-icon class="heart-icon" name="heart"></ion-icon><span>48776</span>
+                                <ion-icon class="chat-icon" name="chatbubble"></ion-icon><span>108</span>
+                            </div>
+                            <div class="info-price">
+                                <a href="https://en.wikipedia.org/wiki/Ranchi">More Info</a>
+                                <h4>$768</h4>
+                            </div>
+                        </div>
+                        <div class="days">5 Days <br> Ranchi</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <h3>Netarhat - Full Tour</h3>
+                    <div class="img-text">
+                        <img src="/GRAPHICS/netarhat.jpg" alt="">
+                        <h4>Included: Flight ticket, Hotel, Tours, Guide</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="heart_chart">
+                                <ion-icon class="heart-icon" name="heart"></ion-icon><span>48776</span>
+                                <ion-icon class="chat-icon" name="chatbubble"></ion-icon><span>1028</span>
+                            </div>
+                            <div class="info-price">
+                                <a href="https://en.wikipedia.org/wiki/Netarhat">More Info</a>
+                                <h4>$780</h4>
+                            </div>
+                        </div>
+                        <div class="days2">5 Days <br> Netarhat</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <h3>Giridih - Full Tour</h3>
+                    <div class="img-text">
+                        <img src="/GRAPHICS/Giridih.jpg" alt="">
+                        <h4>Included: Flight ticket, Hotel, Tours, Guide</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="heart_chart">
+                                <ion-icon class="heart-icon" name="heart"></ion-icon><span>48776</span>
+                                <ion-icon class="chat-icon" name="chatbubble"></ion-icon><span>2328</span>
+                            </div>
+                            <div class="info-price">
+                                <a href="https://en.wikipedia.org/wiki/Giridih">More Info</a>
+                                <h4>$768</h4>
+                            </div>
+                        </div>
+                        <div class="days3">5 Days <br> Giridih</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <h3>Belta Park - Full Tour</h3>
+                    <div class="img-text">
+                        <img src="/GRAPHICS/belta.jpg" alt="">
+                        <h4>Included: Flight ticket, Hotel, Tours, Guide</h4>
+                    </div>
+                    <div class="cont_bx">
+                        <div class="price">
+                            <div class="heart_chart">
+                                <ion-icon class="heart-icon" name="heart"></ion-icon><span>48776</span>
+                                <ion-icon class="chat-icon" name="chatbubble"></ion-icon><span>532</span>
+                            </div>
+                            <div class="info-price">
+                                <a href="https://en.wikipedia.org/wiki/Betla_National_Park">More Info</a>
+                                <h4>$768</h4>
+                            </div>
+                        </div>
+                        <div class="days4" >5 Days <br> Belta Park</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+   
+
+   <!-- This iframe is to show the preloader while refreshing -->
+
+    <iframe class="visible-preloader" width="560" height="315" muted src="https://www.youtube.com/embed/h_SJmiVLM_g?si=Qm_llTClyOmDyKjy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <script src="/JS/explore.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

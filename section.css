@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.sections {
+    padding: 80px 20px;   /* space inside */
+       /* space inside */
+   /* each section covers screen height */
+  border-bottom: 1px solid #ddd;  /* light separator line */
+  background: #f9f9f9; /* light background for clarity */
+}
+
+
+
+
+.sections .temples section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+.sections .history section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+.sections .hills section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+.sections .falls section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.sections .temples section h2{
+    background: white;
+    color: black;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.sections .history section h2{
+    background: white;
+    color: black;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.sections .hills section h2{
+    background: white;
+    color: black;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.sections .falls section h2{
+    background: white;
+    color: black;
+    margin-left: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+
+
+
+.sections .temple_bx{
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
+    /* border: 1px solid black; */
+    align-items: center;
+    border: 0;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+
+
+.sections .temple_bx{
+
+    height: 20%;
+    border: 0;
+    /* border: 1px solid black; */
+}
+.sections .temple_bx h3{
+    margin: 0px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: 40;
+}
+.sections .temple_bx img{
+    height: 90%;
+    border-radius: 20px;
+    width: 75%;
+    justify-content: space-between;
+    height: 25%;
+    margin-top: 10px;
+}
+.sections .temple_bx .btn_temple{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 29%;
+    
+}
+.sections .temple_bx .btn_temple a{
+    text-decoration: none;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 15px;
+    transition: .3s linear;
+    
+}
+.sections .temple_bx .btn_temple a:hover{
+    background: gray;
+}
+.sections .temple_bx .btn_temple h5{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    
+}
+.sections .temple_bx .btn_temple span{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+.temple-flex-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 15px 0 0 30px; /* Adjust as needed */
+}
+
+.temple_bx {
+  flex: 1;
+}
+
+.mahabodhi-right-info {
+  flex: 1;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  padding: 22px 30px 24px 30px;
+  min-width: 420px;
+  max-width: 520px;
+  margin-top: 2%;
+  height: 400px;
+}
+
+.mahabodhi-gallery-table table {
+  width: 100%;
+  border-spacing: 8px;
+}
+
+.gallery-zoom {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s cubic-bezier(.36,1.21,.32,1), box-shadow 0.3s;
+}
+
+.gallery-zoom:hover {
+  transform: scale(2.3) translateY(-16px);
+  z-index: 99;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.23);
+}
+
+@media (max-width: 900px) {
+  .temple-flex-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .mahabodhi-right-info {
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 12px;
+  }
+}
+
+.section-heading {
+  text-align: center;  /* Center heading */
+  font-size: 40px;
+  margin-bottom: 30px; /* Space below heading */
+  font-weight: 900;
+}
+.temple-flex-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+
+
+.temple-flex-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.temple-flex-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 52%; /* Adjust if needed */
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: #ddd; /* Light grey line */
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+
+
+
+header .content .cont_bx {
+  margin-top: 80px;  /* ✅ pushes heading below navbar */
+}
+
+
+/*Making The sections bg transparent*/
+.sections {
+  padding: 80px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* softer line */
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  backdrop-filter: blur(6px);          /* glass effect */
+}
+
+.sections .temples section,
+.sections .history section,
+.sections .hills section,
+.sections .falls section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.5); /* transparent black */
+  backdrop-filter: blur(4px);  /* smooth glass look */
+  color: white;
+  border-radius: 10px;
+}

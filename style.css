@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* {
+    padding: 0;
+    margin: 0;                             /*To remove the default margin*/
+    /* box-sizzing: border-box;
+} */ 
+body{
+    font-family: "Poppins", sans-serif;
+    /*ul=unordered list,li=list,a=anckor tag*/
+    
+    margin: 0;
+    padding-top: 100px; /* Adjust according to your navbar + header height */
+}
+
+header{
+    width: 80%;  
+    height: 95vh;  /*According to device*/
+    /* border: 1px solid black; */
+    margin: auto;  /*To make it in cennter*/
+}
+header nav{
+    width: 95%;  /*Percent of header not screen*/
+    height: 7%;
+    /* border: 1px solid black; */
+    margin:auto;   /*Make in center*/
+    display:flex;  /*Makes all the things in the nav bar in one horizontal level*/
+    align-items: center; /*Goes in row*/
+    justify-content: space-between; /*Gives gap in between*/  
+}
+header nav ul{
+    list-style: none; /*Removes all dots*/
+    display: flex;
+}
+header nav ul li{
+    padding: 3px 15px;  /*Gives space between texts from up and down 3px and from right left 15px*/
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color:black;
+    font-size: 13px;
+    font-weight: 500; /*Bolds The Text*/
+    transition: .3 linear; /*When hovered with cursor will change its color*/
+}
+header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s linear;
+}
+                                           /*For adding the animation that the text will get underlined when hovered*/
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;   /* distance from text */
+    width: 0%;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {      /*Change the color of txt in nav bar when hovered*/
+    color:gray;
+}
+
+header nav ul li a:hover::after {     
+    width: 100%;
+}
+
+header nav .bi-three-dots{
+    display: none;  /*Will be shown in small devices only so makking it dissapear for now*/
+}
+
+header .content{
+    position: relative;
+    width: 100%;
+    height: 97%;
+    /* border: 1px solid black; */
+}
+header .content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 0;
+    bottom: 0;
+    background: transparent; /* ✅ remove image */
+    border-radius: 10px;
+    z-index: -1;
+}
+
+
+header .content .cont_bx{
+    width: 500px;
+    height: auto;
+    color: whitesmoke;
+    padding: 30px;
+}
+header .content .cont_bx h1{
+    line-height: 40px;
+    font-weight: 800;
+    margin: 0;  
+}
+header .content .cont_bx p{
+   font-size: 14px;
+   font-weight: 400;
+   color: rgb(241,241,241);
+}
+header .content .cont_bx button{
+   margin: 20px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   border: 2px solid black;
+   background: black;
+   color: white;
+   outline: none;
+   cursor: pointer;
+   transition: .3s linear;
+}
+header .content .cont_bx button:hover{
+   background: rgb(113, 113, 113);
+   border:2px solid rgb(113, 113, 113);
+}
+    
+header .trip_bx{
+    position: relative;
+    width: 95%;
+    height: auto;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+header .trip_bx .search_bx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;    /*Of trip Box*/
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    border: 5px;
+    box-shadow: 0px 10px 25px rgb(114, 114, 114);
+    z-index: 1;
+    padding: 10px 20px;
+}
+
+header .trip_bx .search_bx .card{
+    width: 200px;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+header .trip_bx .search_bx .card h4{
+    font-size: 15px;
+    margin:0;
+    font-weight: 700;
+}
+header .trip_bx .search_bx .card h4 .bi{
+    position: absolute;
+    font-size: 13px;
+    margin: 2px 0px 0px 5px;
+    transition: .3s linear;
+}
+
+header .trip_bx .search_bx .card input{
+    margin-top: 3px;
+    padding: 5px 0px;
+    border: none;
+    font-size: 13px;
+}
+header .trip_bx .search_bx input[type="button"]{
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: .3s linear;
+    cursor: pointer;
+}
+header .trip_bx .search_bx input[type="button"]:hover{
+    background: gray;
+}
+
+header .trip_bx .travel_bx{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    top: 40px;
+    /* background: black; */
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding-bottom: 20px;
+    box-shadow: 0px 20px 25px -10px rgb(165,165,165);
+}
+header .trip_bx .travel_bx::before{    /*To make background blur*/
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;                      /* Not using background here because the content will also get blurred*/
+    border-radius: 10px;
+    background: rgb(241,241,241,.6);
+    backdrop-filter: blur(5px);
+    z-index: -1;              
+}
+header .trip_bx .travel_bx h4{    
+    margin: 0;
+    padding: 60px 0 15px 1.7%;
+}
+header .trip_bx .travel_bx .cards{    
+    width: 96%;
+    height: auto;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    border: 0;
+    justify-content: space-between;
+}
+header .trip_bx .travel_bx .cards .card{    
+    width: 220px;
+    height: 220px;
+    border: 0;
+    /* border: 1px solid black; */
+ 
+    
+}
+header .trip_bx .travel_bx .cards .card h3{    
+    margin: 0px 0px 10px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+header .trip_bx .travel_bx .cards .card img{    
+    width: 100%;
+    height: 65%;
+    border-radius: 10px;
+}
+header .trip_bx .travel_bx .cards .card .btn_city{    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .trip_bx .travel_bx .cards .card .btn_city a{    
+    text-decoration: none;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 11px;
+    transition: .3s linear;
+}
+header .trip_bx .travel_bx .cards .card .btn_city a:hover{    
+    background: gray;
+}
+header .trip_bx .travel_bx .cards .card .btn_city h5{    
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 5px;
+    line-height: 15px;
+}
+header .trip_bx .travel_bx .cards .card .btn_city h5 span{    
+    font-size: 13px;
+    font-weight: 700;
+}
+
+header .content .trip_bx .search_bx a{
+    text-decoration: none;
+    display: inline-block;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 13px;
+    transition: .3s linear;
+    width: 100px;
+}
+header .content .trip_bx .search_bx a:hover{
+    color: gray;
+}
+/* Use to make a button */
+header .content .cont_bx a{
+    text-decoration: none;
+    display: inline-block;
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 13px;
+    transition: .3s linear;
+    width: auto;
+}
+header .content .cont_bx a:hover{
+    color: gray;
+}
+header .trip_bx .travel_bx .cards .card {
+    border: none !important;        /*Forcefully Removing the border*/
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Modal overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if content too big */
+  background-color: rgba(0,0,0,0.5); /* Black semi-transparent background */
+}
+
+/* Modal box */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* Center vertically and horizontally */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Width of modal */
+  text-align: center;
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: black;
+}
+
+/* Form styling */
+.modal-content input {
+  width: 90%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background: gray;
+}
+
+
+
+/* Main navbar styling */
+/* Make navbar stick to viewport always */
+header nav {
+    position: fixed;   /* FIXED ensures it is always on top of the page */
+    top: 0;            /* Stick to the very top */
+    /* right: 0; */
+    left: 0;           /* Align left */
+    width: 100%;       /* Full width */
+    background: white; /* Background color */
+    z-index: 9999;     /* Stay above everything else */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:12px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    backdrop-filter:blur;
+    background: rgb(241,241,241,.6);
+}
+
+
+
+
+/*dropdown list*/
+/* Ensure nav items are positioned properly */
+header nav ul li{
+  position: relative;
+}
+
+/* Create the dropdown menu only for Community */
+header nav ul li:nth-child(2)::after {
+  content: "";
+}
+
+/* Dropdown container */
+header nav ul li:nth-child(2) .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;        /* directly below Community */
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+header nav ul li:nth-child(2) .dropdown-menu li {
+  padding: 8px 15px;
+}
+
+header nav ul li:nth-child(2) .dropdown-menu li a {
+  color: black;
+  font-size: 13px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+  border: none;
+}
+
+header nav ul li:nth-child(2) .dropdown-menu li a:hover {
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+/* Show on hover */
+header nav ul li:nth-child(2):hover .dropdown-menu {
+  display: block;
+}
+
+
+
+
+
+/* Target the image inside the overlay */
+#loading-overlay .water-effect img {
+  width: 50%;   /* control size */
+  max-width: 80vw; /* prevent overflow on small screens */
+  height: auto;   /* keep proportions */
+  border-radius: 50%; /* optional, circular */
+  margin-left: 24%;
+}
+
+
+
+
+/* Register button look */
+header ul li a.btn-register {
+  background: black;      /* button background */
+  color: white;           /* text color */
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+  border-radius: 15px;
+}
+
+header nav ul li a.btn-register:hover {
+  background: white;      /* hover background */
+  color: black;           /* hover text color */
+}

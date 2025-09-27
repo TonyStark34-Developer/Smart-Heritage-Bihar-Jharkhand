@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/CSS/combined.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mrs+Saint+Delafield&family=Permanent+Marker&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 </head>
 <body>
     <video class="b-vid" src="/GRAPHICS/comb-b.mp4" autoplay loop muted></video>
@@ -13,20 +20,67 @@
         <div class="overlay-b">
             <div class="body-content">
                 <!-- <h1>CHOOSE YOUR DESTINATION</h1> -->
-                <a href="#" class="b-link">
+                <a href="/BIHAR/HTML/index.html" class="b-link">
                     <div class="b-cont">
-                        <h2>Bihar</h2>
-                        <p>Bihar, often called the land of Buddha, is <br>where he attained enlightenment under <br>the Bodhi tree at Bodh Gaya. It remains a sacred <br>destination, drawing millions of seekers<br> from across the world.</p>
+                        <div class="text-bg">
+                            <h2>Bihar</h2>
+                            <p>Bihar, often called the land of Buddha, is <br>where he attained enlightenment under <br>the Bodhi tree at Bodh Gaya. It remains a sacred <br>destination, drawing millions of seekers<br> from across the world.</p>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="j-link">
+                <a href="/HTML/explore.html" class="j-link">
                     <div class="j-cont">
-                        <h2>Jharkhand</h2>
-                        <p>Jharkhand, the land of forests and majestic<br> waterfalls, offers a serene escape into nature’s lap. <br>Its cascading falls echo the same tranquility<br> that once drew sages and seekers <br>to this sacred soil.</p>
+                        <div class="text-bg">
+                            <h2>Jharkhand</h2>
+                            <p>Jharkhand, the land of forests and majestic<br> waterfalls, offers a serene escape into nature’s lap. <br>Its cascading falls echo the same tranquility<br> that once drew sages and seekers <br>to this sacred soil.</p>
+                        </div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
+    <div class="overlay_loader" id="preloader">
+        <img src="/GRAPHICS/loader-img-removebg-preview.png" alt="">
+            <div class="wa-typing" role="status" aria-live="polite" aria-label="Someone is typing">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" autoplay loop>
+        <source src="/GRAPHICS/bg-music2.mp3" type="audio/mpeg">
+    </audio>
+
+    <iframe class="visible-preloader" width="560" height="315" src="https://www.youtube.com/embed/h_SJmiVLM_g?si=Qm_llTClyOmDyKjy&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <script>
+        // loader animation 
+
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        });
+
+        const audio = document.getElementById("bgMusic");
+
+        // Resume time if saved
+        window.addEventListener("DOMContentLoaded", () => {
+        const savedTime = localStorage.getItem("musicTime");
+        if (savedTime) {
+            audio.currentTime = parseFloat(savedTime);
+        }
+        audio.play().catch(()=>{});
+audio.volume = 0.2;
+        });
+
+        // Save time before leaving page
+        window.addEventListener("beforeunload", () => {
+        localStorage.setItem("musicTime", audio.currentTime);
+        });
+
+    </script>
 </body>
 </html>

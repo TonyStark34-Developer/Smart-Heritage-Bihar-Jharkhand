@@ -1,27 +1,28 @@
-const tabs = document.querySelectorAll(".tab");
-const panels = document.querySelectorAll(".tab-panel");
+// const tabs = document.querySelectorAll(".tab");
+// const panels = document.querySelectorAll(".tab-panel");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    panels.forEach(p => p.classList.remove("active"));
+// tabs.forEach(tab => {
+//   tab.addEventListener("click", () => {
+//     tabs.forEach(t => t.classList.remove("active"));
+//     panels.forEach(p => p.classList.remove("active"));
 
-    tab.classList.add("active");
-    const target = tab.getAttribute("data-tab");
-    document.getElementById(target).classList.add("active");
-  });
-});
+//     tab.classList.add("active");
+//     const target = tab.getAttribute("data-tab");
+//     document.getElementById(target).classList.add("active");
+//   });
+// });
 
 
-const mainImage = document.getElementById('mainImage');
-const thumbnails = document.querySelectorAll('.thumbnails img');
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.getElementById('mainImage');
+  const thumbnails = document.querySelectorAll('.thumbnails img');
 
-thumbnails.forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    // Swap the image sources
-    const temp = mainImage.src;
-    mainImage.src = thumb.src;
-    thumb.src = temp;
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const temp = mainImage.src;
+      mainImage.src = thumb.src;
+      thumb.src = temp;
+    });
   });
 });
 
@@ -69,4 +70,53 @@ document.getElementById("backBtn").addEventListener("click", function () {
         // fallback: just go explore page
         window.location.href = "explore.html";
     }
+});
+
+
+const tabs = document.querySelectorAll(".tab");
+const panels = document.querySelectorAll(".tab-panel");
+const sidebar = document.querySelector(".sidebar");
+const page = document.querySelector(".page");
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    // reset
+    tabs.forEach(t => t.classList.remove("active"));
+    panels.forEach(p => p.classList.remove("active"));
+
+    // activate
+    tab.classList.add("active");
+    const target = document.getElementById(tab.dataset.tab);
+    if (target) {
+      target.classList.add("active");
+    }
+
+    // sidebar toggle
+    if (tab.dataset.tab === "planning" || tab.dataset.tab === "hotel") {
+      sidebar.classList.add("hidden");
+      page.classList.add("full-width");
+    } else {
+      sidebar.classList.remove("hidden");
+      page.classList.remove("full-width");
+    }
+
+
+  });
+});
+
+const audio = document.getElementById("bgMusic");
+
+// Resume time if saved
+window.addEventListener("DOMContentLoaded", () => {
+const savedTime = localStorage.getItem("musicTime");
+if (savedTime) {
+    audio.currentTime = parseFloat(savedTime);
+}
+audio.play().catch(()=>{});
+audio.volume = 0.1;
+});
+
+// Save time before leaving page
+window.addEventListener("beforeunload", () => {
+localStorage.setItem("musicTime", audio.currentTime);
 });

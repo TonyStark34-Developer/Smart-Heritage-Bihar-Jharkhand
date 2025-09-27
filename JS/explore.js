@@ -170,3 +170,100 @@ function openDetails(page) {
     const query = document.getElementById("searchBox").value.trim(); // get current search
     window.location.href = `${page}?query=${encodeURIComponent(query)}`; // redirect with query
 }
+
+//chat-box
+
+// Toggle chatbox
+document.getElementById("chat-icon").onclick = () => {
+  const box = document.getElementById("chat-box");
+  const messages = document.getElementById("chat-messages");
+  const currentDisplay = window.getComputedStyle(box).display;
+
+  if (currentDisplay === "none") {
+    box.style.display = "flex";
+
+    // Add greeting only if no messages exist yet
+    if (!messages.dataset.greeted) {
+      messages.innerHTML += `
+        <div class="ai-msg"><b>Nikhil:</b> How can I assist you today?</div>
+      `;
+      messages.dataset.greeted = "true"; // mark as greeted
+    }
+  } else {
+    box.style.display = "none";
+  }
+};
+
+
+// Close chat
+document.getElementById("chat-close").onclick = () => {
+  document.getElementById("chat-box").style.display = "none";
+};
+
+// Send message
+document.getElementById("send-btn").onclick = async () => {
+  const input = document.getElementById("chat-input");
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  const messages = document.getElementById("chat-messages");
+
+  // Show user message
+  messages.innerHTML += `<div class="user-msg"><b>You:</b> ${msg}</div>`;
+
+  // Add animated typing indicator
+  const typingId = "typing-" + Date.now();
+  messages.innerHTML += `
+    <div class="ai-msg" id="${typingId}">
+      <b>Nikhil:</b> <span class="typing-dots"><span></span><span></span><span></span></span>
+    </div>`;
+  messages.scrollTop = messages.scrollHeight;
+
+  try {
+    const response = await fetch("http://localhost:3000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: msg, context: "jharkhand" })
+    });
+    const data = await response.json();
+
+    const typingEl = document.getElementById(typingId);
+    if (typingEl) {
+      typingEl.outerHTML = `
+        <div class="ai-msg"><b>Nikhil:</b> ${marked.parse(data.reply)}</div>`;
+    }
+  } catch (err) {
+    const typingEl = document.getElementById(typingId);
+    if (typingEl) typingEl.outerHTML =
+      `<div class="error-msg"><b>Error:</b> Could not connect to server.</div>`;
+  }
+
+  // Reset input
+  input.value = "";
+
+  // Auto-scroll
+  messages.scrollTop = messages.scrollHeight;
+};
+
+// Enter to send
+document.getElementById("chat-input").addEventListener("keypress", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    document.getElementById("send-btn").click();
+  }
+});
+
+// Save before unload
+window.addEventListener("beforeunload", () => {
+  const audio = document.getElementById("bgMusic");
+  localStorage.setItem("musicTime", audio.currentTime);
+});
+
+// Resume after load
+window.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("bgMusic");
+  const time = localStorage.getItem("musicTime");
+  if (time) audio.currentTime = time;
+  audio.play();
+  audio.volume = 0.1;
+});

@@ -31,6 +31,50 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
 
+// Login form
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page refresh
+
+    let username = document.querySelector("#loginForm input[type='email']").value.split("@")[0]; 
+    sessionStorage.setItem("username", username);
+
+    document.querySelector(".login-label").textContent = username;
+    document.querySelector(".login-button").disabled = true;
+
+    // Close popup after login
+    document.querySelector(".wrapper").classList.remove("active-popup");
+    document.querySelector(".overlay_blury").classList.remove("active-blur");
+});
+
+// Register form
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let username = document.querySelector("#registerForm input[type='text']").value;
+    sessionStorage.setItem("username", username);
+
+    document.querySelector(".login-label").textContent = username;
+    document.querySelector(".login-button").disabled = true;
+
+    // Close popup after registration
+    document.querySelector(".wrapper").classList.remove("active-popup");
+    document.querySelector(".overlay_blury").classList.remove("active-blur");
+});
+
+// On page load
+window.onload = () => {
+    let savedUser = sessionStorage.getItem("username");
+    if (savedUser) {
+        document.querySelector(".login-label").textContent = savedUser;
+        document.querySelector(".login-button").disabled = true;
+    } else {
+        document.querySelector(".login-label").textContent = "Login";
+        document.querySelector(".login-button").disabled = false;
+    }
+};
+
+
+
 /* Type writer animation */
 
 
@@ -92,7 +136,7 @@ function autoslide() {
     sliderNav(currentslide);
 };
 
-setInterval(autoslide, 15000);
+setInterval(autoslide, 22000);
 
 //Manual nav
 
@@ -114,7 +158,39 @@ window.addEventListener("scroll", function() {
 var loader = document.getElementById("preloader");
 
 window.addEventListener("load", function(){
-    loader.style.display = "none";
+     loader.style.display = "none";
 });
 
+//---------------------------------------------------------
+
+
+const btn = document.getElementById('playMusic');
+const audio = document.getElementById('bgMusic');
+
+btn.addEventListener('click', () => {
+    audio.play()
+        .then(() => {
+            console.log('Music started!');
+            btn.style.display = 'none'; // hide button after click
+        })
+        .catch((err) => {
+            console.error('Playback failed:', err);
+            alert('Audio playback failed. Try clicking again.');
+        });
+});
+
+// Save before unload
+window.addEventListener("beforeunload", () => {
+  const audio = document.getElementById("bgMusic");
+  localStorage.setItem("musicTime", audio.currentTime);
+});
+
+// Resume after load
+window.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("bgMusic");
+  const time = localStorage.getItem("musicTime");
+  if (time) audio.currentTime = time;
+  audio.play();
+  audio.volume = 0.07;
+});
 

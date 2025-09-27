@@ -5,6 +5,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+@font-face {
+    font-family: Calibri-Body;
+    src: url(/GRAPHICS/Calibri.TTF);
+}
 
 header {
     z-index: 999;
@@ -57,12 +61,11 @@ header {
 
 header .expo {
     color: rgb(255, 255, 255);
-    font-size: 1.5em;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 1.7em;
+    font-weight: 500;
     text-decoration: none;
+    font-family: Calibri-Body;
 }
-
 header .nav {
     position: relative;
 }
@@ -83,12 +86,12 @@ header .nav .nav-panel a{
     width: 110px;
     height: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 255, 255);
     outline: none;
     border-radius: 3px;
     cursor: pointer;
     font-size: 1.1em;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 550;
     margin-left: 30px;
 }
@@ -119,8 +122,10 @@ header .nav .nav-panel a:hover:before{
 /*typewriter animation is from here vvvvv*/
 
 .dynamic-typing {
+    font-weight: 780;
     position: relative;
     color: aqua;
+    -webkit-text-stroke: 1.5px #434795;
 }
 
 .dynamic-small-dot {
@@ -146,19 +151,17 @@ header .nav .nav-panel a:hover:before{
     }
 }
 
-
 /* Main content CSS */
 
 .body-content{
     z-index: 999;
-    width: 100%;
+    width: 88%;
     position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    text-align: center;
+    top: 22%;
+    text-align: left;
     color: white;
+    left: 140px;
 }
-
 
 .body-content h1{
     font-size: 70px;
@@ -167,12 +170,19 @@ header .nav .nav-panel a:hover:before{
 
 .body-content h2{
     font-size: 30px;
+    /* font-family: "Shadows Into Light Two", cursive; */
+}
+
+.enli-fore{
+    font-size: 30px;
+    font-family: "Shadows Into Light Two", cursive;
 }
 
 .body-content p{
     margin: 20px auto;
     font-weight: 100;
-
+    white-space: 50;
+    /* font-family: "Shadows Into Light Two", cursive; */
 }
 
 .body-content p {
@@ -180,20 +190,19 @@ header .nav .nav-panel a:hover:before{
 }
 
 .body-content a {
-    background: white;
-    border-color: white;
-    padding: 15px 35px;
-    color: black;
-    font-size: 1.3em;
-    font-weight: 700;
+    background: lightseagreen;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
 }
 
 .body-content a:hover {
-    color: white;
-    background: black;
-    /* box-shadow: 0 0 20px rgb(255, 255, 255); */
+    box-shadow: 5px 5px 0px rgb(255, 255, 255);
 }
 
 .icons-media {
@@ -225,7 +234,7 @@ header .nav .nav-panel a:hover:before{
 .icons-media ion-icon:hover {
     background: white;
     color: black;
-    box-shadow: 0 0 20px rgba(255, 255, 255);
+    /* box-shadow: 0 0 20px rgba(255, 255, 255); */
 }
 
 .icons-media {
@@ -238,7 +247,7 @@ header .nav .nav-panel a:hover:before{
 }
 
 .expo:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: ease-out 0.3s;
 }
 
@@ -377,6 +386,22 @@ header .nav .nav-panel a:hover:before{
     z-index: 1;
 }
 
+.disabled-btn {
+    pointer-events: none;
+    cursor: default;
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+    margin-left: 30px;
+    background: white;
+}
 
 .form-box h2 {
     font-size: 2em;
@@ -496,30 +521,179 @@ header .nav .nav-panel a:hover:before{
     top: 0;
     height: 750px;
     width: 100%;
-    background: rgb(183, 204, 204);
+    background: rgba(0, 0, 0, 0.5);
     transform: scale(1);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_loader img {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    left: 35%;
+    top: 10%;
 }
 
 .loader {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 20px solid;
-    border-color: #000 transparent;
-    border-radius: 50%;
-    animation: load 1s linear infinite;
-    top: 35%;
-    left: 45%;
+    justify-items: center;
 }
 
-@keyframes load {
+
+.wa-typing {
+  --dot-color: #5f5f5f;     
+  --dot-size: 60px;          
+  --dot-gap: 60px;           
+  --duration: 1s;           
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dot-gap);
+  padding: 6px 8px;
+  background: transparent;      
+  border-radius: 16px;
+  position: absolute;
+  top: 78%;
+  left: 42%;
+}
+
+.wa-typing .dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--dot-color);
+  border-radius: 50%;
+  display: inline-block;
+  transform: scale(0.7);
+  opacity: 0.6;
+  animation: dot-pulse var(--duration) infinite ease-in-out;
+}
+
+/* stagger each dot */
+.wa-typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.wa-typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-pulse {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+
+.loader h3{
+    font-family: Calibri-Body;
+    top: 250px;
+    font-size: 120px;
+    position: relative;
+    width: auto;
+    height: 200px;
+    animation: load 1s linear infinite;
+    font-weight: 400;
+}
+
+.loader .sub-loader {
+    position: absolute;
+    font-size: 30px;
+    left: 40%;
+    top: 54%;
+}
+
+/* @keyframes load {
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 .visible-preloader {
     position: absolute;
+    z-index: -1;
     top: 0;
     transform: scale(0);
+}
+
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#chat-box {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-direction: column;
+}
+
+#chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+#chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+#chat-input {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    }
+
+#send-btn {
+    width: 25%;
+    padding: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#playMusic {
+    position: absolute;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    z-index: 999;
+    cursor: pointer;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    bottom: 35px;
+    left: 35px;
+}
+
+#playMusic:hover {
+    background: white;
+    color: black;
 }

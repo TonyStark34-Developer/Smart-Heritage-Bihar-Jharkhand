@@ -1,0 +1,699 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+@font-face {
+    font-family: Calibri-Body;
+    src: url(/GRAPHICS/Calibri.TTF);
+}
+
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    transition: 0.5s ease;
+}
+
+.home:before {
+    z-index: 111;
+    content: '';
+    position: absolute;
+    background: rgba(3, 96, 251, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.overlay_blury {
+    font-size: 50px;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 728px;
+    width: 100%;
+    /* filter: blur(5px); */
+    background: rgba(109, 128, 127, 0.801);
+    /* object-fit: cover; */
+    border: 2px solid rgba(206, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.overlay_blury.active-blur {
+    transform: scale(1);
+}
+
+/* CBSE_EXP logo */
+
+header .expo {
+    color: rgb(255, 255, 255);
+    font-size: 1.7em;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: Calibri-Body;
+}
+header .nav {
+    position: relative;
+}
+
+/* Nav-panel css */
+
+header .nav .nav-panel a{
+    position: relative;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 50px;
+    transition: 0.3s ease;
+}
+
+.nav-panel .login-button {
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    font-weight: 550;
+    margin-left: 30px;
+}
+
+.nav-panel .login-button:hover {
+    color: black;
+    background: white;
+}
+
+
+/* Animation of line below the nav-items */
+
+header .nav .nav-panel a:before{
+    content: '';
+    position: absolute;
+    background: white;
+    width: 0%;
+    height: 2.5px;
+    bottom: -6px;
+    left: 0;
+    transition: 0.4s ease;
+}
+
+header .nav .nav-panel a:hover:before{
+    width: 100%;
+}
+
+/*typewriter animation is from here vvvvv*/
+
+.dynamic-typing {
+    font-weight: 780;
+    position: relative;
+    color: aqua;
+    -webkit-text-stroke: 1.5px #434795;
+}
+
+.dynamic-small-dot {
+    font-size: 0.000001px; /* This makes a dot before Typewriter veryyyyy small */
+}
+
+.dynamic-typing::before {
+    position: fixed;
+    content: '';
+    right: -8px;
+    top: 50%;
+    position: absolute;
+    height: 60px;
+    width: 4px;
+    background: white;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Main content CSS */
+
+.body-content{
+    z-index: 999;
+    width: 88%;
+    position: absolute;
+    top: 22%;
+    text-align: left;
+    color: white;
+    left: 140px;
+}
+
+.body-content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.body-content h2{
+    font-size: 30px;
+    /* font-family: "Shadows Into Light Two", cursive; */
+}
+
+.enli-fore{
+    font-size: 30px;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.body-content p{
+    margin: 20px auto;
+    font-weight: 100;
+    white-space: 50;
+    /* font-family: "Shadows Into Light Two", cursive; */
+}
+
+.body-content p {
+    margin-bottom: 35px;
+}
+
+.body-content a {
+    background: lightseagreen;
+    border: none;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.body-content a:hover {
+    box-shadow: 5px 5px 0px rgb(255, 255, 255);
+}
+
+.icons-media {
+    z-index: 999;
+    position: absolute;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+    margin-top: 10px;
+    bottom: 30%;
+}
+
+.icons-media ion-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px 5px;
+    color: white;
+    text-decoration: none;
+    animation-delay: calc(0.2s * var(--i)); 
+}
+
+.icons-media ion-icon:hover {
+    background: white;
+    color: black;
+    /* box-shadow: 0 0 20px rgba(255, 255, 255); */
+}
+
+.icons-media {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.icons-media a:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.expo:hover {
+    transform: scale(1.1);
+    transition: ease-out 0.3s;
+}
+
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+}
+
+.body-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Slider Navigation form here vvvvv */
+
+.slider-nav {
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(610px);
+}
+
+.slider-nav .nav-btn {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+}
+
+.slider-nav .nav-btn.active2 {
+    background: rgb(76, 100, 255);
+}
+
+.slider-nav .nav-btn:not(:last-child){
+    margin-right: 13px;
+}
+
+.slider-nav .nav-btn:hover {
+    transform: scale(1.2);
+}
+
+.body-video {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 50% 100%);
+}
+
+.body-video.active2 {
+    clip-path: circle(100% at 50% 100%);
+    transition: 0.8s ease;
+    transition-property: clip-path;
+}
+
+/* Login menu from here */
+
+.wrapper {
+    z-index: 1001;
+    position: relative;
+    top: 115px;
+    left: 37%;
+    width: 400px;
+    height: 440px;
+    background: rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    backdrop-filter: blur(70px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.18s ease;
+    transition: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease ;
+    transform: translateX(0);
+}
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: black;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.disabled-btn {
+    pointer-events: none;
+    cursor: default;
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+    margin-left: 30px;
+    background: white;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: black;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: 0.9em;
+    color: #000;
+    font-weight: 500;
+    margin: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: gray;
+    color: #000;
+}
+
+.login-register {
+    font-size: 0.9em;
+    color: black;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 550;
+}
+
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+/* Loading Screeen animation from here vvvvv */
+
+.overlay_loader {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    height: 750px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_loader img {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    left: 35%;
+    top: 10%;
+}
+
+.loader {
+    justify-items: center;
+}
+
+
+.wa-typing {
+  --dot-color: #5f5f5f;     
+  --dot-size: 60px;          
+  --dot-gap: 60px;           
+  --duration: 1s;           
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dot-gap);
+  padding: 6px 8px;
+  background: transparent;      
+  border-radius: 16px;
+  position: absolute;
+  top: 78%;
+  left: 42%;
+}
+
+.wa-typing .dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--dot-color);
+  border-radius: 50%;
+  display: inline-block;
+  transform: scale(0.7);
+  opacity: 0.6;
+  animation: dot-pulse var(--duration) infinite ease-in-out;
+}
+
+/* stagger each dot */
+.wa-typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.wa-typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-pulse {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+
+.loader h3{
+    font-family: Calibri-Body;
+    top: 250px;
+    font-size: 120px;
+    position: relative;
+    width: auto;
+    height: 200px;
+    animation: load 1s linear infinite;
+    font-weight: 400;
+}
+
+.loader .sub-loader {
+    position: absolute;
+    font-size: 30px;
+    left: 40%;
+    top: 54%;
+}
+
+/* @keyframes load {
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+.visible-preloader {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    transform: scale(0);
+}
+
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#chat-box {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-direction: column;
+}
+
+#chat-header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+
+#chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+#chat-input {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    }
+
+#send-btn {
+    width: 25%;
+    padding: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#playMusic {
+    position: absolute;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 40px;
+    z-index: 999;
+    cursor: pointer;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    bottom: 35px;
+    left: 35px;
+}
+
+#playMusic:hover {
+    background: white;
+    color: black;
+}

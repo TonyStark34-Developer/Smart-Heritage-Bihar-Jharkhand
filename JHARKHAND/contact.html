@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/contactcss.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3./CSS/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Permanent+Marker&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <h2>Connect with Us</h2>
+        <p>Delhi Public School Gaya is run under the aegis of the Delhi Public School Society, New Delhi, a <br> non-profit-making society registered under the Society's Registration Act of 1860. <br> The members of the society are renowned Educationists, Jurists, <br> Engineers and Administrators.</p>
+    </div>
+    <div class="contact-email"><span class="icon2"/><ion-icon name="mail-unread"></ion-icon></span><a href="mailto:info@dpsgaya.com"> info@dpsgaya.com</a></div>
+    <div class="contact-phone"><span class="icon2"><ion-icon name="call"></ion-icon></span><a href="#"> +91 8521092596, +91 9229711974</a></div> 
+    <div class="contact-web"><span class="icon2"><ion-icon name="globe"></ion-icon></span><a href="http://www.dpsgaya.com"> www.dpsgaya.com</a></div> 
+    <div class="contact-location"><span class="icon2"><ion-icon name="location"></ion-icon></span><a href="https://maps.google.com/maps?ll=24.733939,84.974094&z=12&t=m&hl=en-US&gl=US&mapclient=embed&cid=9770480301362134646"> At Dubhal, Gaya, Bihar - 823001</a></div> 
+    <header>
+        <a href="https://cbseit.in/cbse/2024/skillexpo/index" class="expo">Smart Heritage Explorer</a>
+        <div class="nav">
+            <div class="nav-panel">
+                <a href="/HTML/index.html">Home</a>
+                <a href="/HTML/combined.html">Explore</a>
+                <a href="/HTML/contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+    <div class="overlay_loader" id="preloader">
+        <img src="./GRAPHICS/loader-img-removebg-preview.png" alt="">
+            <div class="wa-typing" role="status" aria-live="polite" aria-label="Someone is typing">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    <img class="background-image" src="./GRAPHICS/dps.webp";>
+
+    <div class="overlay_blury"></div>
+
+    <div class="wrapper">
+        <div class="form-box register">
+            <h2>Contact Us</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="chatbubble"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Your Message</label>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+                <div class="login-register">
+                    <p>Want to know more about us?  <a href="https://www.dpsgaya.com/about-us.php" class="login-link">Click here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="credit">
+        <h3> Made By - Nikhil</h3>
+    </div>
+
+    <!-- This iframe is to show the preloader while refreshing -->
+
+   <iframe class="visible-preloader" width="560" height="315" src="https://www.youtube.com/embed/h_SJmiVLM_g?si=Qm_llTClyOmDyKjy&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        // loader animation 
+
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

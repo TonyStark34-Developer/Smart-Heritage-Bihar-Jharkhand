@@ -1,0 +1,208 @@
+.overlay-b:before {
+    z-index: 3;
+    content: '';
+    position: absolute;
+    background: rgba(174, 242, 250, 0.3);
+    width: 49%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.overlay-j:before {
+    z-index: 3;
+    content: '';
+    position: absolute;
+    background: rgba(115, 105, 255, 0.3);
+    width: 51%;
+    height: 100%;
+    top: 0;
+    left: 49%;
+}
+
+.b-vid {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+.j-vid {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 49%;
+    object-fit: cover;
+    height: 100%;
+    width: 51%;
+}
+
+.body-content {
+    justify-items: center;
+}
+
+.body-content h1 {
+    z-index: 10;
+    color: white;
+    position: absolute;
+    font-size: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 7px;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px);
+    top: -30px;
+}
+
+.b-cont:hover {
+    transform: scale(1.1);
+}
+
+.b-cont h2 {
+    font-family: "Kanit", sans-serif;
+    color: cyan;
+    -webkit-text-stroke: 0.2px white;
+    font-size: 50px;
+    font-weight: 450;
+}
+
+.b-cont p {
+    font-family: "Barlow Condensed", sans-serif;
+    position: relative;
+    top: -35px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.text-bg {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 2px white solid;
+}
+
+.b-cont {
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    right: 58%;
+    background: rgba(0, 0, 0,);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+}
+
+.j-cont {
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 57%;
+    background: rgba(0, 0, 0,);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+}
+
+.j-cont:hover {
+    transform: scale(1.1);
+}
+
+.j-cont h2 {
+    font-family: "Kanit", sans-serif;
+    color: yellow;
+    -webkit-text-stroke: 0.2px white;
+    font-size: 50px;
+    font-weight: 450;
+}
+
+.j-cont p {
+    font-family: "Barlow Condensed", sans-serif;
+    position: relative;
+    top: -35px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.b-link {
+    text-decoration: none;
+}
+
+.j-link {
+    text-decoration: none;
+}
+
+.overlay_loader {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    height: 750px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_loader img {
+    height: 500px;
+    width: 500px;
+    position: relative;
+    left: 35%;
+    top: 10%;
+}
+
+.loader {
+    justify-items: center;
+}
+
+.wa-typing {
+  --dot-color: #5f5f5f;     
+  --dot-size: 60px;          
+  --dot-gap: 60px;           
+  --duration: 1s;           
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dot-gap);
+  padding: 6px 8px;
+  background: transparent;      
+  border-radius: 16px;
+  position: absolute;
+  top: 78%;
+  left: 42%;
+}
+
+.wa-typing .dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--dot-color);
+  border-radius: 50%;
+  display: inline-block;
+  transform: scale(0.7);
+  opacity: 0.6;
+  animation: dot-pulse var(--duration) infinite ease-in-out;
+}
+
+/* stagger each dot */
+.wa-typing .dot:nth-child(2) { animation-delay: 0.2s; }
+.wa-typing .dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dot-pulse {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

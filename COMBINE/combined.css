@@ -206,3 +206,17 @@
     opacity: 1;
   }
 }
+
+
+
+
+.vertical-line {
+    position: absolute;
+    top: 0;
+    left: 49%;             
+    width: 4px;            
+    height: 100%;          
+    background-color: white;
+    z-index: 5; 
+    
+}

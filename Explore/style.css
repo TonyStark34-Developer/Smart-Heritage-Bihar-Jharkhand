@@ -685,13 +685,13 @@ header .nav .nav-panel a:hover:before{
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 40px;
+    font-size: 35px;
     z-index: 999;
     cursor: pointer;
     background: transparent;
     backdrop-filter: blur(10px);
     bottom: 35px;
-    left: 35px;
+    right: 35px;
 }
 
 #playMusic:hover {
